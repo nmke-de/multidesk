@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Read argument, if any
+loadthis=$1
+[ -z "$1" ] && loadthis=default
+
+# The directory with all the desktop configs
+DESKTOP_LIST=$XDG_CONFIG_HOME/desktops
+[ -d "$DESKTOP_LIST" ] || mkdir $DESKTOP_LIST || exit 1
+
+# If given '-l', then list all available desktops and exit.
+[ "$loadthis" = "-l" ] && ls $DESKTOP_LIST && exit
+
+# If a desktop has already been started, exit
+[ -z "$DISPLAY" ] || exit 2
+[ -z "$WAYLAND_DISPLAY" ] || exit 2
+
+# Write hint of current desktop
+echo "$loadthis" > $DESKTOP_LIST/.loaded
+
+# Start desktop – XoXo
+exec $DESKTOP_LIST/$loadthis/main.sh

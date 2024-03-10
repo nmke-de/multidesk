@@ -1,0 +1,3 @@
+[submodule "desktopstarter/BarnabasBox"]
+	path = desktopstarter/BarnabasBox
+	url = https://github.com/nmke-de/BarnabasBox
