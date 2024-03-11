@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# xinitrc
+# 
+# 1. Set wallpaper
+# 2. Spawn a few services
+# 3. Execute window manager
+
+xwallpaper --stretch TODO_IMAGE.png
+
+dsv $(which pipewire) &
+dsv $(which pipewire-pulse) &
+dsv $(which wireplumber) &
+
+exec i3 -c $(dirname $0)/config
