@@ -5,7 +5,7 @@ loadthis=$1
 [ -z "$1" ] && loadthis=default
 
 # The directory with all the desktop configs
-DESKTOP_LIST=$XDG_CONFIG_HOME/desktops
+DESKTOP_LIST=${DESKTOP_LIST:$XDG_CONFIG_HOME/desktops}
 [ -d "$DESKTOP_LIST" ] || mkdir $DESKTOP_LIST || exit 1
 
 # If given '-l', then list all available desktops and exit.
