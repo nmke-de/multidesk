@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
 				// Make sure this program won't be called recursively in this case.
 				setenv("DESKTOP_STARTED", "yes", 1);
 				chdir(getenv("HOME"));
-				execve("/bin/sh", (char * const*) cargs("/bin/sh"), environ);
+				execvp("get_login", (char * const*) cargs("get_login"));
 				_exit(2);
 			default:
 				continue;

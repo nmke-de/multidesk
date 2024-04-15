@@ -1,5 +1,0 @@
-#!/bin/sh
-
-. ~/.bashrc
-vs
-exec bash
