@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
 				// Make sure this program won't be called recursively in this case.
 				setenv("DESKTOP_STARTED", "yes", 1);
 				chdir(getenv("HOME"));
-				execve(".bash_tty_profile", (char * const*) cargs(".bash_tty_profile"), environ);
+				execve("/bin/sh", (char * const*) cargs("/bin/sh"), environ);
 				_exit(2);
 			default:
 				continue;
