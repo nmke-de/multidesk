@@ -58,6 +58,8 @@ int main(int argc, char **argv) {
 			case 'j':
 				selection = min(n_desktops - 1, selection + 1);
 				break;
+			case 'r':
+				selection = rn(0, n_desktops - 1);
 			case '\n':
 				goto eval;
 			case 'q':

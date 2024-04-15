@@ -9,7 +9,7 @@ void print_list(struct dirent ***list, int len_i, int selection, int offset){
 	int row = 0, col = 0;
 	bsize(&row, &col);
 	--row;
-	bputs("Select with j/k, press Return to start, q to cancel.\n");
+	bputs("Select with j/k, press Return to start, r to select random, q to cancel.\n");
 	int start = max(0, selection - row + 1 + offset);
 	int end = min(len_i, row + start - 1);
 	for(int i = start; i < end; i++) {

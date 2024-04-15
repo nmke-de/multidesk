@@ -5,6 +5,7 @@
 char *cat(const char *);
 int ls(const char *, struct dirent ***);
 void print_list(struct dirent***, int, int, int);
+unsigned long rn(int, int);
 
 // static inline functions
 static inline int min(int a, int b) {
